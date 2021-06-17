@@ -103,17 +103,17 @@ if (Request::segment(2) === 'rtl') {
                         <li><a href="">اعداد المنتسبين للصناديق</a></li>
                     </ul>
                 </li>
-                <li><a href="#"><i class="zmdi zmdi-assignment"></i><span>المواد الأولية</span></a></li>
                 @if(Auth::user()->union_id==1)
                 <li>
                     <a class="menu-toggle"><i class="zmdi zmdi-apps"></i> <span>اتحادات</span></a>
-                    <ul class="ml-menu">
+                    <ul class="ml-menu" style="overflow-y:scroll;height:10em;">
                         @foreach($unions as $un)
                         <li><a href="{{route('union.index',['name'=>$un->name])}}">{{$un->name}}</a></li>
                         @endforeach
                     </ul>
                 </li>
                 @endif
+                <li><a href="#"><i class="zmdi zmdi-assignment"></i><span>المواد الأولية</span></a></li>
             </ul>
         </div>
     </aside>
